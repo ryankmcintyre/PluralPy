@@ -1,2 +1,4 @@
 .vscode/settings.json
 students.txt
+__pycache__/*
+webapp/__pycache__/*

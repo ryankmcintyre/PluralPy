@@ -4,7 +4,7 @@ class Student:
 
     school_name = "Sprintfield Elementary"
 
-    def __init__(self, name, student_id=332):
+    def __init__(self, name, last_name="Jones", student_id=332):
         """
         Constructor which creates a new student
         :param name: string - student name
@@ -12,6 +12,7 @@ class Student:
         """
         
         self.name = name
+        self.last_name = last_name
         self.student_id = student_id
         students.append(self)
 
