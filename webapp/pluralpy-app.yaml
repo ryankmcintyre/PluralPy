@@ -1,0 +1,27 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: plural-py-app
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: plural-py-app
+    spec:
+      containers:
+      - name: plural-py-app
+        image: ryanmcintyre/plural-py-app:v1
+        ports:
+        - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: plural-py-app
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 5000
+  selector:
+    app: plural-py-app
